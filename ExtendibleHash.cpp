@@ -23,7 +23,7 @@ ExtendibleHash::ExtendibleHash(const int & notFound, int b, int LSize) :
 
 void ExtendibleHash::insert(const int &object)
 {
-
+  
 } // insert()
 
 

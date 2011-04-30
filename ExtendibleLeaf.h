@@ -5,16 +5,16 @@
 
 class ExtendibleLeaf
 {
-  int LSize;
+  int LeafSize;
   int count;
-  int *firstparent;
+  int *data;
 
  public:
   ExtendibleLeaf(int LSize);
   void insert(int object);
   void remove(int object);
   int find(int object);
-  int split(int object);
+  void split(int object);
     
 }; //ExtendibleLeaf
 

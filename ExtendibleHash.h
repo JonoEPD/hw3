@@ -1,5 +1,5 @@
 #ifndef EXTENDIBLE_HASH_H
-  #define EXTENDIBLE_HASH_H
+#define EXTENDIBLE_HASH_H
 
 
 class ExtendibleHash
@@ -20,6 +20,8 @@ public:
 }; // class ExtendibleHashing
 
 #include "ExtendibleHash.cpp"
+#include "ExtendibleLeaf.h"
+#include "ExtendibleLeaf.cpp"
 
 #endif
 
