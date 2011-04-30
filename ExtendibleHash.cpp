@@ -13,7 +13,7 @@ int pow(int a, int b) //integer power a^b
 
 int Ehash(int value, int bits)
 {
-  return value >> (18 - bits) ;
+  return value >> (18 - bits);
 } // Ehash()
 
 ExtendibleHash::ExtendibleHash(const int & notFound, int b, int LSize) :
@@ -24,7 +24,7 @@ ExtendibleHash::ExtendibleHash(const int & notFound, int b, int LSize) :
   directory[0] = new ExtendibleLeaf(LSize);
     for(int i = 0; i < directs; i++) //easiest way, initially have everything point to an empty leaf
     {
-      directory[i] = NULL;
+      directory[i] = directory[0];
     }
   notfound = notFound;
 } // ExtendibleHash()

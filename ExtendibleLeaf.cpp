@@ -8,16 +8,17 @@ ExtendibleLeaf::ExtendibleLeaf(int LSize)
   count = 0;
 }
 
-void ExtendibleLeaf::insert(int object)
+ExtendibleLeaf * ExtendibleLeaf::insert(int object)
 {
   if(count < LeafSize)
     {
       data[count] = object;
       count++;
+      return NULL;
     }
   else
     {
-      split(object);
+      return split(object);
     }
 }
 
@@ -48,7 +49,8 @@ int ExtendibleLeaf::find(int object)
   return -1; //not found
 }
 
-void ExtendibleLeaf::split(int object)
+ExtendibleLeaf * ExtendibleLeaf::split(int object) //pointer to new leaf
 {
-  //do stuff
+  //ExtendibleLeaf * newleaf = new ExtendibleLeaf(LeafSize);
+  
 }
