@@ -6,10 +6,11 @@
 
 class ExtendibleHash
 {
-  ExtendibleLeaf **directory;
+  ExtendibleLeaf** directory;
   int bits;
   int size;
   int LeafSize;
+  int notfound;
 
 public:
   ExtendibleHash(const int & notFound, int s, int LSize = 2);

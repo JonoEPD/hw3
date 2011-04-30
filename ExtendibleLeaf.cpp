@@ -30,7 +30,7 @@ void ExtendibleLeaf::remove(int object)
 	  data[i] = data[count-1]; //assign new value
 	  data[count-1] = 0; //zero old
 	  count--;
-	  i = count; 
+	  i = count; //break loop (duplicates will stay!) 
 	}
     }
   //note: if empty, just leave it be (no merge)
