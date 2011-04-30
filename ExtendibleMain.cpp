@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 // argv[1] is data filename in the form: "Hash-" Maxsize "-" LeafSize "-"
 //             StartBits "-" Seed ".dat"
 {
-  char command, *ptr;
+  char command;//, *ptr;
   int value, value2, StartBits, LeafSize;
 
   ifstream inf(argv[1]);

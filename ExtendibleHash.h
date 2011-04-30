@@ -4,7 +4,7 @@
 
 class ExtendibleHash
 {
-//  ExtendibleLeaf  **Directory;
+  //ExtendibleLeaf  **Directory;
   int bits;
   int size;
   int LeafSize;
@@ -13,7 +13,7 @@ public:
   ExtendibleHash(const int & notFound, int s, int LSize = 2);
   void insert(const int &object);
   void remove(const int &object);
-  const int & find(const int &object);
+  const int find(const int &object);
   void split(const int &object);
   int GetBits()const {return bits;}
 
