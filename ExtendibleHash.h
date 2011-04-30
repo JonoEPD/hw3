@@ -1,10 +1,12 @@
 #ifndef EXTENDIBLE_HASH_H
 #define EXTENDIBLE_HASH_H
 
+#include "ExtendibleLeaf.h"
+#include "ExtendibleLeaf.cpp"
 
 class ExtendibleHash
 {
-  //ExtendibleLeaf  **Directory;
+  ExtendibleLeaf **directory;
   int bits;
   int size;
   int LeafSize;
@@ -20,8 +22,6 @@ public:
 }; // class ExtendibleHashing
 
 #include "ExtendibleHash.cpp"
-#include "ExtendibleLeaf.h"
-#include "ExtendibleLeaf.cpp"
 
 #endif
 

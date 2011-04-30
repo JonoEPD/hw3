@@ -19,6 +19,7 @@ int Ehash(int value, int bits)
 ExtendibleHash::ExtendibleHash(const int & notFound, int b, int LSize) :
   bits(b), LeafSize(LSize)
 {
+  directory = new ExtendibleLeaf *[pow(2,b)];
 } // ExtendibleHash()
 
 void ExtendibleHash::insert(const int &object)
