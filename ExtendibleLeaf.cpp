@@ -51,6 +51,6 @@ int ExtendibleLeaf::find(int object)
 
 ExtendibleLeaf * ExtendibleLeaf::split(int object) //pointer to new leaf
 {
-  //ExtendibleLeaf * newleaf = new ExtendibleLeaf(LeafSize);
-  
+  ExtendibleLeaf * newleaf = new ExtendibleLeaf(LeafSize);
+  return newleaf;
 }

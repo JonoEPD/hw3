@@ -15,8 +15,10 @@ class ExtendibleLeaf
   void remove(int value);
   int find(int value);
   ExtendibleLeaf * split(int value);
-    
+  
 }; //ExtendibleLeaf
+
+#include "ExtendibleLeaf.cpp"
 
 #endif
 

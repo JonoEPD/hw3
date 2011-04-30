@@ -22,7 +22,7 @@ ExtendibleHash::ExtendibleHash(const int & notFound, int b, int LSize) :
   int directs = pow(2,b);
   directory = new ExtendibleLeaf* [directs];
   directory[0] = new ExtendibleLeaf(LSize);
-    for(int i = 0; i < directs; i++) //easiest way, initially have everything point to an empty leaf
+  for(int i = 0; i < directs; i++) //easiest way, initially have everything point to an empty leaf
     {
       directory[i] = directory[0];
     }
@@ -51,7 +51,10 @@ const int ExtendibleHash::find(const int &object)
 {
   int bin = Ehash(object,bits);
   int look = directory[bin]->find(object); 
-  return look;
+  if(look == -1)
+    return notfound; //key for "not found"
+  else
+    return look;
 }  // find()
 
 
