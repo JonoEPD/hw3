@@ -90,7 +90,8 @@ bool ExtendibleLeaf::split(ExtendibleLeaf ** dir, int object, int bits) //pointe
 		  j--; //we shifted
 		}
 	    }
-	      return NULL; //break out
+	  insertDriver(object);
+	  return NULL; //break out
 	}
     }
   return 1; //failed to split
