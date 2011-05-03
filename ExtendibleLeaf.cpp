@@ -12,14 +12,19 @@ bool ExtendibleLeaf::insert(ExtendibleLeaf ** dir, int object, int bits)
 {
   if(count < LeafSize)
     {
-      data[count] = object;
-      count++;
+      insertDriver(object);
       return NULL;
     }
   else
     {
       return split(dir, object, bits);
     }
+}
+
+void ExtendibleLeaf::insertDriver(int object)
+{
+  data[count] = object;
+  count++;
 }
 
 void ExtendibleLeaf::remove(int object)
@@ -54,13 +59,23 @@ int EHash(int value, int bits)
   return value >> (18 - bits);
 } // Ehash()
 
-bool ExtendibleLeaf::split(ExtendibleLeaf ** dir, int object, int bit) //pointer to new leaf
+//0 = good, 1 = split
+bool ExtendibleLeaf::split(ExtendibleLeaf ** dir, int object, int bits) //pointer to new leaf
 {
-  //int mark = EHash(object,bit);
-  
-
-  //ExtendibleLeaf * newleaf = new ExtendibleLeaf(LeafSize);
-  return NULL;
+  int mark = EHash(object,bits);
+  for(int i = 0; i < LeafSize; i++)
+    {
+      if(EHash(data[i],bits) != mark) //first value we can split
+	{
+	  int newmark = EHash(data[i],bits);
+	  int val = data[i];
+	  remove(val); //take it out
+	  dir[newmark] = new ExtendibleLeaf(LeafSize);
+	  dir[newmark]->insertDriver(val); //put it in
+	  return NULL;
+	}
+    }
+  return 1; //failed
 }
 
 
