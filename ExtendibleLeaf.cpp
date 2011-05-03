@@ -75,7 +75,7 @@ bool ExtendibleLeaf::split(ExtendibleLeaf ** dir, int object, int bits) //pointe
 	  return NULL;
 	}
     }
-  return 1; //failed
+  return 1; //failed to split
 }
 
 

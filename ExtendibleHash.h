@@ -1,3 +1,5 @@
+//Jonathan Hollenbeck
+
 #ifndef EXTENDIBLE_HASH_H
 #define EXTENDIBLE_HASH_H
 
