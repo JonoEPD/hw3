@@ -24,7 +24,7 @@ ExtendibleHash::ExtendibleHash(const int & notFound, int b, int LSize) :
   int directs = pow(2,b);
   directory = new ExtendibleLeaf* [directs];
   directory[0] = new ExtendibleLeaf(LSize);
-  for(int i = 0; i < directs; i++) //easiest way, initially have everything point to an empty leaf
+  for(int i = 1; i < directs; i++) //easiest way, initially have everything point to an empty leaf
     {
       directory[i] = directory[0];
     }
@@ -35,7 +35,7 @@ void ExtendibleHash::insert(const int &object)
 {
   int bin = Ehash(object,bits);
   int fail = directory[bin]->insert(directory, object, bits); 
-  if(fail == true)
+  if(fail == 1)
     {
       split(object);
       insert(object);

@@ -15,6 +15,7 @@ class ExtendibleLeaf
   bool insert(ExtendibleLeaf ** dir, int value, int bits); 
   void insertDriver(int value);
   void remove(int value);
+  void removeDriver(int index);
   int find(int value);
   bool split(ExtendibleLeaf **, int value, int bits);
   
