@@ -8,7 +8,7 @@ ExtendibleLeaf::ExtendibleLeaf(int LSize)
   count = 0;
 }
 
-ExtendibleLeaf * ExtendibleLeaf::insert(ExtendibleLeaf ** dir, int object, int bits)
+bool ExtendibleLeaf::insert(ExtendibleLeaf ** dir, int object, int bits)
 {
   if(count < LeafSize)
     {
@@ -54,9 +54,11 @@ int EHash(int value, int bits)
   return value >> (18 - bits);
 } // Ehash()
 
-ExtendibleLeaf * ExtendibleLeaf::split(ExtendibleLeaf ** dir, int object, int bit) //pointer to new leaf
+bool ExtendibleLeaf::split(ExtendibleLeaf ** dir, int object, int bit) //pointer to new leaf
 {
-  int lmark, rmark, mark = EHash(object,bit);
+  //int mark = EHash(object,bit);
+  
+
   //ExtendibleLeaf * newleaf = new ExtendibleLeaf(LeafSize);
   return NULL;
 }
