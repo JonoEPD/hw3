@@ -1,4 +1,4 @@
-//Jonathan Hollenbeck
+//Jonathan Hollenbeck Richard Chen 994635329
 
 #ifndef EXTENDIBLE_HASH_H
 #define EXTENDIBLE_HASH_H
