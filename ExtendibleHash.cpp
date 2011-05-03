@@ -34,11 +34,11 @@ ExtendibleHash::ExtendibleHash(const int & notFound, int b, int LSize) :
 void ExtendibleHash::insert(const int &object)
 {
   int bin = Ehash(object,bits);
-  int split_fail = 0; //deal with this later
-  directory[bin]->insert(directory, object, bits); //the nth bin will be the right insert
-  if(split_fail == 1)
+  int fail = directory[bin]->insert(directory, object, bits); 
+  if(fail == true)
     {
       split(object);
+      insert(object);
     }
 } // insert()
 
@@ -60,8 +60,18 @@ const int ExtendibleHash::find(const int &object)
 }  // find()
 
 
-
-void ExtendibleHash::split(const int &object)
+void ExtendibleHash::split(const int &object) //called iff lsplit fail
 {
-  /* stuff goes here */
+  int direct = pow(2,bits);
+  int ndirect = pow(2,bits+1);
+  ExtendibleLeaf ** newdir = new ExtendibleLeaf* [ndirect];
+  for(int i = 0; i < direct; i++)
+    {
+      newdir[2*i] = directory[i]; //simply double all leaves
+      newdir[2*i+1] = directory[i];
+    }
+  ExtendibleLeaf ** tmpdir = directory;
+  directory = newdir; //swap
+  delete tmpdir;
+  bits++;
 }  // split()
