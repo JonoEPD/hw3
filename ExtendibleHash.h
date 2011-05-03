@@ -14,7 +14,7 @@ class ExtendibleHash
 public:
   friend class ExtendibleLeaf; //allows maintenence
   ExtendibleHash(const int & notFound, int s, int LSize = 2);
-  void insert(const int &object);
+  void insert(const int &object); 
   void remove(const int &object);
   const int find(const int &object);
   void split(const int &object);

@@ -11,10 +11,10 @@ class ExtendibleLeaf
 
  public:
   ExtendibleLeaf(int LSize);
-  ExtendibleLeaf * insert(int value);
+  ExtendibleLeaf * insert(ExtendibleLeaf ** dir, int value, int bits);
   void remove(int value);
   int find(int value);
-  ExtendibleLeaf * split(int value);
+  ExtendibleLeaf * split(ExtendibleLeaf ** dir, int value, int bits);
   
 }; //ExtendibleLeaf
 

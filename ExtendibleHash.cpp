@@ -33,7 +33,7 @@ void ExtendibleHash::insert(const int &object)
 {
   int bin = Ehash(object,bits);
   int split_fail = 0; //deal with this later
-  directory[bin]->insert(object); //the nth bin will be the right insert
+  directory[bin]->insert(directory, object, bits); //the nth bin will be the right insert
   if(split_fail == 1)
     {
       split(object);
