@@ -1,5 +1,4 @@
-//Jonathan Hollenbeck
-
+//Jonathan Hollenbeck   Richard Chen 994635329
 #include "ExtendibleHash.h"
 #include "ExtendibleLeaf.h"
 
